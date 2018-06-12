@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/resources">
+        <file>eoy.wav</file>
+        <file>icon.png</file>
+    </qresource>
+</RCC>
