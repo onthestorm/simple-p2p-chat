@@ -20,7 +20,7 @@ void MainWindow::on_serverButton_clicked()
 {
     QString ip = ui->serverIP->text();
     QString port = ui->serverPort->text();
-    server * Server = new server(ip, port);
+    Server = new server(ip, port);
     connect(Server, SIGNAL(connection()), this, SLOT(clientConnected()));
     connect(Server, SIGNAL(message(QString)), this, SLOT(NewMessage(QString)));
     ui->chatBox->append("Your server started");
@@ -31,7 +31,7 @@ void MainWindow::on_connectButton_clicked()
 {
     QString ip = ui->conncectIP->text();
     QString port = ui->connectPort->text();
-    client * Client = new client(ip, port);
+    Client = new client(ip, port);
     connect(Client, SIGNAL(ClientConnectedToServer()), this, SLOT(connected()));
     connect(this, SIGNAL(sendMessage(QString)), Client, SLOT(slSendMessage(QString)));
 }
